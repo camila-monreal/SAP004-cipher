@@ -1,6 +1,6 @@
 /* O usuário vai digitar esses parâmetros */
-const text = " ";
-const offset = " ";
+const text = document.getElementById("message");
+const offset = document.getElementById("offSet");
 
 /*Funções*/
 function messageToCharcode(text){

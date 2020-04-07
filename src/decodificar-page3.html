@@ -11,15 +11,22 @@
       <img id="logoHat" src="images/hat.svg" alt="Witch hat logo">
     </header >  
     <nav>
-      
+        <A class="Home" HREF="index.html"> Home </A>
+        <A class="getStarted" HREF="page1.html"> Get started </A>
     </nav>
     <section>
-      <div id="welcomeText">
-        <p class="welcome">Hello, welcome to the Book of Shadows encoder.<br><br>
-        You can encode and decode messages with the shadow algorithm <br> based onthe mysteries of Caesar's cipher.<br><br>
-        Turn your ideas into secret messages.</p>
-      <A id="bottonStart" HREF="page1.html"> Get started </A> 
-      </div>
+        <div id="form">
+            <form name="form">
+                <h1>Put a message and a secret number to decode</h1>
+                <textarea id= "message" placeholder="Message to decode"></textarea>
+                <p id="offSet">
+                    <input type="text" id="offSet" required="required" placeholder="Secret number" />
+                </p>
+                    
+                <p class="submit">
+                    <input type="submit" onclick="Enviar();" value="Enviar" />
+                </p>
+            </form>
     
       <div id="parchmentBackground">
         <img id="parchment" src="images/parchment.svg" alt="Old Paper">
@@ -39,5 +46,3 @@
     <script src="index.js" type="module"></script>
   </body>
 </html>
-
-
