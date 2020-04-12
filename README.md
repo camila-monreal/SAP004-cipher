@@ -40,7 +40,15 @@ O protótipo de tela foi feito utilizando a ferramenta Figma. E o protótipo ini
 
 ***
 
-# Deploy
+# Deploy, instação e Dependências
+* Instale o Node.js;
+* Faça um fork no Github;
+* Clone o fork para seu computador (cópia local);
+* Instale as dependências: npm install (No terminal);
+* Para atualizar seu projeto localmente e no github acesse o tutorial da [Rails Girls](http://guides.railsgirls.com/guides-ptbr/github);
+* Para execultar os testes: npm test (No terminal);
+* Para ver a interface do seu programa no navegador, use o comando npm start(No terminal) para iniciar o servidor web e entre na url http://localhost:5000 no seu navegador.
+* Se quiser pode hospedar no [Github Pages](https://pages.github.com/), ativando na aba de configurações do seu fork no Github;
 
 ***
 
