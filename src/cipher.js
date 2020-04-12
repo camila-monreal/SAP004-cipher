@@ -1,61 +1,64 @@
-/* O usuário vai digitar esses parâmetros */
-const text = document.getElementById("message");
-const offset = document.getElementById("offSet");
-
-/*Funções*/
-function messageToCharcode(text){
-  let index;
-  let charcode=[];
-  for(index in text){ 
-    charcode.push(text.charCodeAt(index));
+/*Functions*/
+const cipher = {
+  messageToCharcode: function messageToCharcode(text){
+    let index;
+    let charcode=[];
+    for(index in text){ 
+      charcode.push(text.charCodeAt(index));
+    }
+    return charcode;
+  }, 
+  AddOffSetCharcodeToLettersMessage: function AddOffSetCharcodeToLettersMessage(messageAddOffset){
+    let charcodeToletters;
+    let lettersMessage=[];
+    for(charcodeToletters of messageAddOffset){
+      lettersMessage.push(String.fromCharCode(charcodeToletters));
+    }
+    return lettersMessage.join("");
+  },
+  cipherOffSet: function cipherOffSet(charcode, offset){
+    var addOffSetCesar;
+    var messageAddOffSetCesar=[];
+    for (addOffSetCesar of charcode){
+      messageAddOffSetCesar.push(((addOffSetCesar - 65 + offset) % 26) +65);
+    }
+    return messageAddOffSetCesar;
+  },
+  decipherOffSet: function decipherOffSet(charcode, offset){
+    var subOffSetCesar;
+    var messageSubOffSetCesar=[];
+    for (subOffSetCesar of charcode){
+      if (((subOffSetCesar - 65 - offset) % 26) >= 0){
+        messageSubOffSetCesar.push(((subOffSetCesar - 65 - offset) % 26)+65);
+      }else{
+        messageSubOffSetCesar.push(((subOffSetCesar - 65 - offset) % 26) +91);
+      }
+    }
+    return messageSubOffSetCesar;
+  },
+  encode: function encode(offset, text){
+    if (typeof(offset)!= "number"){ 
+      throw new TypeError;
+    }
+    if (typeof(text)!= "string"){ 
+      throw new TypeError;
+    } 
+    var charcode = cipher.messageToCharcode(text);
+    var messageAddOffSetCesar = cipher.cipherOffSet(charcode,offset);
+    var lettersMessage = cipher.AddOffSetCharcodeToLettersMessage(messageAddOffSetCesar);
+    return lettersMessage;
+  },
+  decode: function decode(offset,text){
+    if (typeof(offset)!= "number"){ 
+      throw new TypeError;
+    }
+    if (typeof(text)!= "string"){ 
+      throw new TypeError;
+    }
+    var charcode = cipher.messageToCharcode(text);
+    var messageAddOffSetCesar = cipher.decipherOffSet(charcode,offset);
+    var lettersMessage = cipher.AddOffSetCharcodeToLettersMessage(messageAddOffSetCesar);
+    return lettersMessage
   }
-  console.log(charcode)
-  return charcode;
-} 
-function charcodeToMessage(charcode){
-  let char;
-  let message=[];
-  for(char of charcode){ 
-    message.push(String.fromCharCode(char));
-    
-  }
-  console.log(message.join(""));
-  return message;  
 }
-function addOffsetToCharcode(charcode, offset){
-  var addOffSet;
-  var messageAddOffset=[];
-  for (addOffSet of charcode){
-    messageAddOffset.push(parseInt(addOffSet) + parseInt(offset));
-  }
-  console.log(messageAddOffset);
-  return messageAddOffset;
-}
-function AddOffSetCharcodeToLettersMessage(messageAddOffset){
-  let charcodeToletters;
-  let lettersMessage=[];
-  for(charcodeToletters of messageAddOffset){
-    lettersMessage.push(String.fromCharCode(charcodeToletters));
-    
-  }
-  console.log(lettersMessage.join(""));
-  return lettersMessage;
-}
-function subOffsetToCharcode(charcode, offset){
-  var subOffSet;
-  var messageSubOffset=[];
-  for (subOffSet of charcode){
-    messageSubOffset.push(parseInt(subOffSet) - parseInt(offset));
-  }
-  console.log(messageSubOffset);
-  return messageSubOffset;
-}
-
-/* Codificar */
-var charcode = messageToCharcode(text);
-var messageAddOffset = addOffsetToCharcode(charcode,offset);
-var lettersMessage = AddOffSetCharcodeToLettersMessage(messageAddOffset);
-/* De-codificar */
-var charcode = messageToCharcode(text);
-var messageAddOffset = addOffsetToCharcode(charcode,-offset);
-var lettersMessage = AddOffSetCharcodeToLettersMessage(messageAddOffset);
+export default cipher;
