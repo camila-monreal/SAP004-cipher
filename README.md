@@ -13,6 +13,7 @@ Normal:MEU NOME E CAMILA MONREAL. QUAL O SEU NOME?
 Cifrado:VND)WXVN)P)LJVRUJ)VXWANJU7)ZDJU)X)BND)WXVNH
                   :point_down:            
 Quando a pessoa for decifrar essa mensagem, com caracteres fora do alfabeto em caixa alta, acontecerá isso:
+
 Decifrado: MEUTNOMETETCAMILATMONREALHTQUALTOTSEUTNOMEY
 
 ***
