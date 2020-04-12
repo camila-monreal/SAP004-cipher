@@ -2,14 +2,16 @@
 A aplicação é destinada para cifrar e decifrar uma mensagem utilizando o método "Cifra de César". Uma  forma simples de criptografia por substituição, cada letra do texto é substituida por outra letra. O nome é em homenagem á Julio César, que usava essa criptografia para se comunicar com seus generais.
 O alfabeto cifrado é o alfabeto normal deslocado à direita ou esquerda por um número de posições que é escolhida pelo usuário, serão cifradas dessa forma apenas as letras do alfabeto digitadas em Caixa Alta(CapsLocK ativado), por exemplo:
 
-Normal:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Normal: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
 Cifrado: DEFGHIJKLMNOPQRSTUVWXYZABC
 
 Os outros caracteres, tal como letras minúsculas, serão cifrados, porém utilizando o deslocamento inputado pelo usuário(Nesse exemplo usamos 9) dentro da tabela ASC II, por exemplo: 
 
 Normal:MEU NOME E CAMILA MONREAL. QUAL O SEU NOME?
-Cifrado:VND)WXVN)P)LJVRUJ)VXWANJU7)ZDJU)X)BND)WXVNH
 
+Cifrado:VND)WXVN)P)LJVRUJ)VXWANJU7)ZDJU)X)BND)WXVNH
+                  :point_down:            
 Quando a pessoa for decifrar essa mensagem, com caracteres fora do alfabeto em caixa alta, acontecerá isso:
 Decifrado: MEUTNOMETETCAMILATMONREALHTQUALTOTSEUTNOMEY
 
