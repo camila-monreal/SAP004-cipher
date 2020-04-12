@@ -34,10 +34,15 @@ A interface do usuário foi definida através da história de usuário:
  * A mensagem aparecerá na mesma caixa de input que o usuário inseriu a mensagem, ele poderá copiar e colar onde ele quiser, ou copiar em um papel á mão; 
 * Próximo aos botões de Encode e Decode estará um atalho para voltar para a tela inicial, chamado de "Home".
 
-O protótipo de tela foi feito utilizando a ferramenta Figma. E o protótipo inicial foi o da imagem abaixo(Imagem capturada na página da ferramenta Figma): 
+O protótipo de tela foi feito utilizando a ferramenta Figma. E o protótipo inicial foi o da imagem abaixo (Imagem capturada na página da ferramenta Figma): 
 
   ![](src/images/figma.png)
 
 ***
 
 # Deploy
+
+***
+
+# Considerações
+Nas linhas 56 até 60 do arquivo "cipher.spec.js" os comandos para execução do teste decode estavam incorretos, eles chamavam cipher.encode ao invés de cipher.decode. Modifiquei, acertando para cipher.decode
