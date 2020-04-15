@@ -20,7 +20,6 @@ const cipher = {
     let OffSetCesar;
     let messageOffSet=[];
     for(OffSetCesar of charcode){
-      console.log(OffSetCesar);
       if((OffSetCesar >= 65) && (OffSetCesar <= 90)){
           messageOffSet.push(((OffSetCesar - 65 + offset) % 26)+65);
       }
@@ -40,12 +39,17 @@ const cipher = {
       if((subOffSetCesar >= 65) && (subOffSetCesar <= 90)){
         if(((subOffSetCesar - 65 - offset) % 26) >= 0){
           messageSubOffSet.push(((subOffSetCesar - 65 - offset) % 26)+65);
+        }else{
+          messageSubOffSet.push(((subOffSetCesar - 65 - offset) % 26)+91);
         }
-      }if((subOffSetCesar >=97) && (subOffSetCesar <=122)){
+      } else if((subOffSetCesar >=97) && (subOffSetCesar <=122)){
         if(((subOffSetCesar - 97 - offset) % 26) >= 0){
           messageSubOffSet.push(((subOffSetCesar - 97 - offset) % 26)+97);
+        }else{
+          messageSubOffSet.push(((subOffSetCesar - 97 - offset) % 26)+123);
         }
-      }else{
+      }
+        else{
         messageSubOffSet.push(subOffSetCesar)
       }
     }
@@ -60,12 +64,10 @@ const cipher = {
     } 
     var charcode = cipher.messageToCharcode(text);
     var messageAddOffSetCesar = cipher.AddOffSet(charcode,offset);
-    console.log(messageAddOffSetCesar);
     var lettersMessage = cipher.AddOffSetCharcodeToLettersMessage(messageAddOffSetCesar);
     return lettersMessage;
   },
   decode: function decode(offset,text){
-    console.log("caraleo")
     if (typeof(offset)!= "number"){ 
       throw new TypeError;
     }
@@ -73,11 +75,8 @@ const cipher = {
       throw new TypeError;
     }
     var charcode = cipher.messageToCharcode(text);
-    console.log(charcode);
     var messageSubOffSet = cipher.subtractTheOffset(charcode,offset);
-    console.log(messageSubOffSet);
     var lettersMessage = cipher.AddOffSetCharcodeToLettersMessage(messageSubOffSet);
-    console.log(lettersMessage);
     return lettersMessage;
   }
 }
