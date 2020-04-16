@@ -4,33 +4,34 @@
     <meta charset="utf-8">
     <title>Book of Shadows</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-cipher-cesar.css" />
   </head>
   <body>
     <header>
-      <h1 id= "logoTitle" >Book of Shadows</h1>
-      <img id="logoHat" src="images/hat.svg" alt="Witch hat logo">
+      <h1 class= "logo-title">Book of Shadows</h1>
+      <img class="logo-hat" src="images/hat.svg" alt="Witch hat logo">
     </header >  
     <section>      
-      <form name="form" id="form">
-        <h1>Input a message and a secret number to code</h1>
+      <form name="form" class="form">
+        <h2>Input a message and a secret number to code</h2>
         <textarea id= "message" placeholder="Message"></textarea>
         <p>
           <input type="text" id="offset" required="required" placeholder="Secret number" />
         </p>
-        <button  id="codeButton" type="button" placeholder="send"> Code</button>
-        <button  id="decodeButton" type="button" placeholder="send"> Decode</button>
-        <a type="button" id="Home" href="index.html"> Home </a>
+        <button  id="codeButton" class="button" type="button" placeholder="send"> Code</button>
+        <button  id="decodeButton" class="button" type="button" placeholder="send"> Decode</button>
+        <a type="button" class="button-home" href="index.html"> Home ☪️ </a>
       </form>
-      <p id="messagedata"></p>
-      <div id="parchmentBackground">
-        <img id="parchment" src="images/parchment.svg" alt="Old Paper">
+        <p id="message-data"></p>
+      <div>
+        <img class="parchment" src="images/parchment.svg" alt="Old Paper">
       </div>
     </section> 
     <span> 
-      <img id="rightImage" src="images/binary.svg" alt="Binary numbers">
+        <img class="right-image" src="images/binary.svg" alt="Binary numbers">
     </span>
     <span>
-      <img id="leftImage" src="images/pentagram.svg" alt="Pentagram">
+        <img class="left-image" src="images/pentagram.svg" alt="Pentagram">
     </span>
     <footer>
       <!-- Colocar creditos--> 

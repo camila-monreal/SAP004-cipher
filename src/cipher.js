@@ -62,9 +62,9 @@ const cipher = {
     if (typeof(text)!= "string"){ 
       throw new TypeError;
     } 
-    var arrayCharcodes = cipher.messageToArrayCharcodes(text);
-    var arrayCharcodesAddOffSet = cipher.AddOffSetToArray(arrayCharcodes, offset);
-    var message = cipher.arrayTomessage(arrayCharcodesAddOffSet);
+    let arrayCharcodes = cipher.messageToArrayCharcodes(text);
+    let arrayCharcodesAddOffSet = cipher.AddOffSetToArray(arrayCharcodes, offset);
+    let message = cipher.arrayTomessage(arrayCharcodesAddOffSet);
     return message;
   },
   decode: function decode(offset,text){
@@ -74,9 +74,9 @@ const cipher = {
     if (typeof(text)!= "string"){ 
       throw new TypeError;
     }
-    var arrayCharcodes = cipher.messageToArrayCharcodes(text);
-    var arraySubOffSet = cipher.subtractOffSet(arrayCharcodes,offset);
-    var message = cipher.arrayTomessage(arraySubOffSet);
+    let arrayCharcodes = cipher.messageToArrayCharcodes(text);
+    let arraySubOffSet = cipher.subtractOffSet(arrayCharcodes,offset);
+    let message = cipher.arrayTomessage(arraySubOffSet);
     return message;
   }
 }
